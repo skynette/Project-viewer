@@ -1,0 +1,10 @@
+accounts/migrations/
+core/migrations/
+posts/migrations/
+
+sub/__pycache__/
+accounts/__pycache__/
+core/__pycache__/
+posts/__pycache__/
+
+db.sqlite3
