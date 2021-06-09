@@ -1,0 +1,216 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		<title>Project Viewer</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="preconnect" href="https://fonts.gstatic.com/" />
+
+		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+
+		<link
+			rel="preload"
+			as="style"
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+		/>
+
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+			media="print"
+			onload="this.media='all'"
+		/>
+		<link rel="stylesheet" type="text/css" href="{% static 'assets/style.css' %}" />
+
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+		/>
+		<link rel="stylesheet" href="{% static 'assets/main.css' %}" />
+
+		<meta
+			name="description"
+			content="Create a subscription Ghost blog with a beautiful and minimalist design."
+		/>
+		<link rel="canonical" href="{% url 'index' %}" />
+		<meta name="referrer" content="no-referrer-when-downgrade" />
+		<link rel="next" href="{% url 'index' %}" />
+
+		<meta property="og:site_name" content="Project Viewer" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Project Viewer" />
+		<meta
+			property="og:description"
+			content="Create a subscription Ghost blog with a beautiful and minimalist design."
+		/>
+		<meta
+			property="og:url"
+			content="https://Project Viewer.aspirethemes.com/"
+		/>
+		<meta
+			property="article:publisher"
+			content="https://www.facebook.com/aspirethemes"
+		/>
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="Project Viewer" />
+		<meta
+			name="twitter:description"
+			content="Create a subscription Ghost blog with a beautiful and minimalist design."
+		/>
+		<meta
+			name="twitter:url"
+			content="https://Project Viewer.aspirethemes.com/"
+		/>
+		<meta name="twitter:site" content="@aspirethemes" />
+		<meta name="generator" content="Ghost 4.6" />
+	</head>
+	<body class="home-template">
+		<div class="c-site-container">
+    
+			<header class="c-header">
+				<div class="o-grid o-grid--center">
+					<div class="o-grid__col">
+						<div class="c-header__inner">
+							<div class="c-logo">
+								<a class="c-logo__link" href="{% url 'index' %}">Project Viewer</a>
+							</div>
+
+							<div class="c-nav-wrap">
+								<ul class="c-nav c-nav--left o-plain-list">
+									<li class="c-nav__item">
+										
+									</li>
+									<li class="c-nav__item">
+										
+									</li>
+									<li class="c-nav__item">
+										
+									</li>
+									<li class="c-nav__item">
+										
+									</li>
+									<li class="c-nav__item">
+										
+									</li>
+								</ul>
+
+								<ul class="c-nav c-nav--right o-plain-list">
+									
+									<li class="c-nav__item">
+										<a
+											href="{% url 'login' %}"
+											class="c-btn c-btn--small c-btn--outline"
+											>Log in</a
+										>
+									</li>
+									<li class="c-nav__item">
+										<a
+											href="{% url 'register' %}"
+											class="c-btn c-btn--small c-btn--action"
+											>Register</a
+										>
+									</li>
+								</ul>
+							</div>
+
+							<div class="js-nav-toggle c-nav-toggle">
+								<span class="c-nav-toggle__icon"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+    
+
+			<div class="c-search js-search">
+				<div class="o-grid">
+					<div
+						class="
+							o-grid__col
+							o-grid__col--4-4-s
+							o-grid__col--3-4-m
+							o-grid__col--center
+						"
+					>
+						<form class="c-search__form">
+							<div class="c-search__icon">
+								<svg
+									viewBox="0 0 18 18"
+									version="1.1"
+									xmlns="http://www.w3.org/2000/svg"
+									xmlns:xlink="http://www.w3.org/1999/xlink"
+								>
+									<g
+										id="Project Viewer"
+										stroke="none"
+										stroke-width="1"
+										fill="none"
+										fill-rule="evenodd"
+										stroke-linejoin="round"
+									>
+										<g
+											id="blog_home-[desktop]"
+											transform="translate(-699.000000, -42.000000)"
+											stroke="#687385"
+											stroke-width="2"
+										>
+											<g
+												id="Icons/16px/search"
+												transform="translate(700.000000, 43.000000)"
+											>
+												<g id="search">
+													<path
+														d="M12.9032258,6.4516129 C12.9032258,10.0148883 10.0148883,12.9032258 6.4516129,12.9032258 C2.88833747,12.9032258 0,10.0148883 0,6.4516129 C0,2.88833747 2.88833747,0 6.4516129,0 C10.0148883,0 12.9032258,2.88833747 12.9032258,6.4516129 Z"
+														id="Stroke-1"
+													></path>
+													<line
+														x1="15.483871"
+														y1="15.483871"
+														x2="10.5806452"
+														y2="10.5806452"
+														id="Stroke-5"
+													></line>
+												</g>
+											</g>
+										</g>
+									</g>
+								</svg>
+							</div>
+							<label for="search-form-input" class="u-hidden-visually"
+								>Search Project Viewer</label
+							>
+							<input
+								type="search"
+								id="search-form-input"
+								aria-label="Search Project Viewer"
+								class="c-search__input js-search-input"
+								placeholder="Type to Search"
+							/>
+						</form>
+					</div>
+				</div>
+
+				<div class="o-grid">
+					<div
+						class="
+							o-grid__col
+							o-grid__col--4-4-s
+							o-grid__col--3-4-m
+							o-grid__col--center
+						"
+					>
+						<div class="c-search-results js-search-results"></div>
+					</div>
+				</div>
+
+				<div class="c-search__close js-search-close">
+					<div data-icon="ei-close" data-size="s"></div>
+				</div>
+			</div>
+			<div class="c-tags-list-container"></div>
+

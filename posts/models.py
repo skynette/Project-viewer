@@ -9,7 +9,7 @@ class Post(models.Model):
 
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
 	title = models.CharField(max_length=50, null=True, blank=True)
-	snippet = CharField(max_length=50, null=True, blank=True)
+	snippet = models.CharField(max_length=50, null=True, blank=True)
 	content = models.TextField(max_length=5000, null=True, blank=True)
 	slug = models.SlugField(max_length=50, null=True, blank=True)
 	date = models.DateTimeField(auto_now_add=True)

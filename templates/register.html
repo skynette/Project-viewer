@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <main class='o-wrapper'>
+      <div class='o-grid'>
+        
+<div class='o-grid__col o-grid__col--center o-grid__col--3-4-m o-grid__col--2-3-l  o-grid__col--4-4-l '>
+  <div class='c-archive'>
+    <h1 class='c-archive__title'>Choose your subscription</h1>
+    <p class='c-archive__description'>Unlock full access to Krabi and see the entire library of members-only content &amp; updates.</p>
+  </div>
+</div>
+
+<div class='o-grid__col o-grid__col--center o-grid__col--3-4-m o-grid__col--2-3-l  o-grid__col--4-4-l '>
+  <div class='c-member-plans'>
+    <div class='c-member-plan c-member-plan--free'>
+      <header class='c-member-plan__header'>
+        <h2 class='c-member-plan__title'>Free</h2>
+        <strong class='c-member-plan__amount'>0</strong>
+      </header>
+      <div class='c-member-plan__content'>
+        <ul class='c-member-plan__list'>
+          <li>Regular updates with new content</li>
+          <li>Support independent publishing</li>
+        </ul>
+        <a class='c-btn c-btn--action' href='../signup/index.html'>Choose this plan</a>
+      </div>
+    </div>
+
+  <div class='c-member-plan c-member-plan--premium'>
+    <header class='c-member-plan__header'>
+      <h2 class='c-member-plan__title'>Monthly</h2>
+      <span class='c-member-plan__sign'>$</span>
+      <strong class='c-member-plan__amount'>5</strong>
+    </header>
+    <div class='c-member-plan__content'>
+      <ul class='c-member-plan__list'>
+        <li>Full access to all private posts</li>
+        <li>Regular updates with new content</li>
+        <li>Support independent publishing</li>
+        <li>Simple, secure card payment</li>
+      </ul>
+      <a class='c-btn c-btn--dark' href='javascript:void(0)' data-members-plan='Monthly'>Choose this plan</a>
+    </div>
+  </div>
+
+  <div class='c-member-plan c-member-plan--premium'>
+    <header class='c-member-plan__header'>
+      <h2 class='c-member-plan__title'>Yearly</h2>
+      <span class='c-member-plan__sign'>$</span>
+      <strong class='c-member-plan__amount'>20</strong>
+    </header>
+    <div class='c-member-plan__content'>
+      <ul class='c-member-plan__list'>
+        <li>Full access to all private posts</li>
+        <li>Regular updates with new content</li>
+        <li>Support independent publishing</li>
+        <li>Simple, secure card payment</li>
+        <li>One easy payment instead of 12!</li>
+      </ul>
+      <a class='c-btn c-btn--dark' href='javascript:void(0)' data-members-plan='Yearly'>Choose this plan</a>
+    </div>
+  </div>
+</div></div>
+      </div>
+    </main>
+
+    
+{% endblock content %}
