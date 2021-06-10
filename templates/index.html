@@ -16,13 +16,15 @@
 							o-grid__col--2-3-l
 						"
 					>
-						<div class="js-grid">
+					{% for post in posts %}
+          	<div class="js-grid">
 							<div class="c-post-card js-post-card post tag-design">
 								<div class="c-post-card__media">
 									<div class="c-post-card__image-wrap">
 										<img
 											alt="Tech Companies Scaling Design"
 											class="c-post-card__image lazyload"
+                      src = "{{ post.ImgUrl }}"
 
 										/>
 									</div>
@@ -30,8 +32,8 @@
 
 								<div class="c-post-card__content">
 									<h2 class="c-post-card__title">
-										<a href="welcome-2/index.html" class="c-post-card__url"
-											>Tech Companies Scaling Design</a
+										<a href="{% url 'detail' post.slug %}" class="c-post-card__url"
+											>{{ post.title }}</a
 										>
 
 										<div
@@ -46,44 +48,39 @@
 									</h2>
 
 									<p class="c-post-card__excerpt">
-										We've crammed the most important information to help you get
-										started with Ghost into this one post. It's your cheat-sheet
-										to get started, and your shortcut to advanced features.
+										{{ post.snippet }}
 									</p>
 
 									<div class="c-post-card__meta">
-										<a href="author/top/index.html" class="c-post-card__author">
+										<a href="link to author here" class="c-post-card__author">
 											<div class="c-post-card__author_media">
 												<img
 													class="c-post-card__author_image lazyload"
-													data-src="/content/images/size/w64/2020/11/guillaume-bleyer-Dep2HTKqGj0-unsplash-5.jpg"
-													alt="William James"
+													data-src="author img src"
+													alt=""
 													width="32"
 													height="32"
 												/>
 											</div>
 											<div class="c-post-card__author_info">
 												<div class="c-post-card__author_name">
-													William James
+													{{ post.user.username }}
 												</div>
 												<time
 													class="c-post-card__date"
-													datetime="2019-10-16"
-													title="16 October 2019"
-													>16 Oct 2019</time
+													datetime=""
+													title=""
+													>{{ post.date }}</time
 												>
 											</div>
 										</a>
-
-										<div class="c-post-card__tag">
-											<a href="tag/design/index.html">Design</a>
-										</div>
 									</div>
 								</div>
 							</div>							
 							
 							
 						</div>
+          {% endfor %}
 						<div
 							class="
 								o-grid__col
@@ -93,11 +90,7 @@
 								o-grid__col--1-3-l
 							"
 						>
-							<div class="c-pagination">
-								<button class="c-btn c-btn--outline c-btn--full js-load-posts">
-									More Posts
-								</button>
-							</div>
+							
 						</div>
 					</div>
 					<div
