@@ -1,10 +1,12 @@
 accounts/migrations/
+accounts/__pycache__/
+
 core/migrations/
-posts/migrations/
+core/__pycache__/
 
 sub/__pycache__/
-accounts/__pycache__/
-core/__pycache__/
+
 posts/__pycache__/
+posts/migrations/
 
 db.sqlite3

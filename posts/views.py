@@ -25,12 +25,13 @@ def detail(request, slug):
 # @login_required(login_url='/login/')
 def create_post(request):
 	if request.method == "POST" and request.FILES['document']:
-		doc = request.POST['document']
+		doc = request.FILES['document']
 		title = request.POST['title']
-		image = request.POST['image']
-		snippet = request.POST['snippet']
-		content = request.POST['content']
-		post = Post.objects.create(user=request.user, title=title, image=image, snippet=snippet, content=content)
+		# image = request.POST['image']
+		# snippet = request.POST['snippet']
+		# content = request.POST['content']
+		post = Post.objects.create(user=request.user, title=title, document=doc)
+		post.save()
 	return render(request, 'create_post.html')
 
 

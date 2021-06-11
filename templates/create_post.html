@@ -13,17 +13,18 @@
     </div>
 
     <div class='u-bg-white u-border u-border-radius u-p-32'>
-      <form data-members-form='signin' class='c-subscribe-form c-subscribe-form--compact'>
+      <form data-members-form='signin' class='c-subscribe-form c-subscribe-form--compact' method="POST" action='{% url "create" %}' enctype="multipart/form-data">
+      {% csrf_token %}
         <div class='form-group'>
-          <label for='subscribe-email-signin' class='u-hidden-visually'>Your email address</label>
-          <input type='email' name='email' class='c-subscribe-form__input' id='subscribe-email-signin' placeholder='Your email address' required data-members-email>
+          <label for='subscribe-email-signin' class='u-hidden-visually'>Project title</label>
+          <input type='text' name='title' class='c-subscribe-form__input' id='subscribe-email-signin' placeholder='Your Project Title' required data-members-email>
         </div>
         <br>
         <div class='form-group'>
           <label for='subscribe-email-signin' class='u-hidden-visually'>Document</label>
           <input type='file' name='document' class='c-subscribe-form__input' id='subscribe-email-signin' placeholder='Your Password' required data-members-email>
         </div>
-        
+        <button type="submit" class="btn btn-auth w-100">Post</button>
 
         <div class='c-alert c-alert--success'>Please check your inbox and click the link to complete the login.</div>
         <div class='c-alert c-alert--invalid'>Please enter a valid email address!</div>
