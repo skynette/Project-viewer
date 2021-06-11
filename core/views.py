@@ -10,7 +10,7 @@ def initiate_payment(request):
 	if request.method == "POST":
 		print(request.POST)
 		amount = request.POST['amount']
-		email = request.POST['email']
+		email = 'cutejosh2@gmail.com'
 
 		pk = settings.PAYSTACK_PUBLIC_KEY
 
@@ -26,7 +26,7 @@ def initiate_payment(request):
 		}
 		return render(request, 'make-payment.html', context)
 
-	return render(request, 'initiate-payments.html')
+	return render(request, 'register.html')
 
 
 def verify_payment(request, ref):

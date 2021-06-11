@@ -1,39 +1,55 @@
-{% extends 'base.html' %}
-{% block title %}Pay now{% endblock %}
+{% extends 'base.html' %} {% block title %}Pay now{% endblock %} 
+
 {% block content %}
-Payment for {{ payment.amount }} with ref {{ payment.ref }} initiated by {{ payment.email }}
 
-  <div class="form-submit">
-    <button onclick="payWithPaystack()"> Pay </button>
-  </div>
+<main class="o-wrapper">
+	<div class="o-grid">
+		<div
+			class="
+				o-grid__col o-grid__col--center o-grid__col--3-4-m o-grid__col--2-3-l
+			"
+		>
+			<div class="c-archive">
+				<h1 class="c-archive__title">Proceed to Pay NGN{{ payment.amount }}</h1>
+				<p class="c-archive__description">
+					Payment reference: {{ payment.ref }}
+				</p>
+        <div class="form-submit">
+          {% comment %} <button onclick="payWithPaystack()">Pay</button> {% endcomment %}
+          <button onclick="payWithPaystack()" class="c-btn c-btn--small c-btn--action">Pay</button>
+        </div>
+			</div>
+		</div>
+	</div>
+</main>
 
-<script src="https://js.paystack.co/v1/inline.js"></script> 
+
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
 <script>
-  function payWithPaystack(){
-    let currency = "NGN";
-    let plan = "";
-    let ref = "{{ payment.ref }}";
-    let amount = "{{ payment.amount }}";
-    let obj = {
-      key: "{{ paystack_pub_key }}",
-      email: "{{ payment.email }}",
-      amount: "{{ amount_value }}",
-      ref : ref,
-      callback: function(response){
-      
-          window.location.href = "{% url 'verify-payment' payment.ref %}";
-      }
-    }
-    if (Boolean(currency)){
-      obj.currency = currency.toUpperCase()
-    }
-    if (Boolean(plan)){
-      obj.plan - plan
-    }
+	function payWithPaystack() {
+		let currency = "NGN";
+		let plan = "";
+		let ref = "{{ payment.ref }}";
+		let amount = "{{ payment.amount }}";
+		let obj = {
+			key: "{{ paystack_pub_key }}",
+			email: "{{ payment.email }}",
+			amount: "{{ amount_value }}",
+			ref: ref,
+			callback: function (response) {
+				window.location.href = "{% url 'verify-payment' payment.ref %}";
+			},
+		};
+		if (Boolean(currency)) {
+			obj.currency = currency.toUpperCase();
+		}
+		if (Boolean(plan)) {
+			obj.plan - plan;
+		}
 
-    var handler = PaystackPop.setup(obj);
-    handler.openIframe();
-  }
-
+		var handler = PaystackPop.setup(obj);
+		handler.openIframe();
+	}
 </script>
 {% endblock %}
