@@ -7,8 +7,7 @@ def slugifyy(text):
 	return text
 
 class Post(models.Model):
-
-	user = models.ForeignKey(User, on_delete=models.CASCADE)
+	user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 	title = models.CharField(max_length=50, null=True, blank=True)
 	image = models.ImageField(upload_to='posts/%Y/%m/%d/', max_length=250, null=True, blank=True)
 	snippet = models.CharField(max_length=500, null=True, blank=True)
