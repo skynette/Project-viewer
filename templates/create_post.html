@@ -3,13 +3,13 @@
 
 {% block content %}
 
-    <main class='o-wrapper'>
+<main class='o-wrapper'>
       <div class='o-grid'>
         
 <div class='o-grid__col o-grid__col--center o-grid__col--3-4-m o-grid__col--2-3-l'>
     <div class='c-archive'>
-      <h1 class='c-archive__title'>Welcome back!</h1>
-      <p class='c-archive__description'>Log in to your account again.</p>
+      <h1 class='c-archive__title'>Create Pot</h1>
+      <p class='c-archive__description'>Create Post page</p>
     </div>
 
     <div class='u-bg-white u-border u-border-radius u-p-32'>
@@ -20,8 +20,8 @@
         </div>
         <br>
         <div class='form-group'>
-          <label for='subscribe-email-signin' class='u-hidden-visually'>Your Password</label>
-          <input type='password' name='password' class='c-subscribe-form__input' id='subscribe-email-signin' placeholder='Your Password' required data-members-email>
+          <label for='subscribe-email-signin' class='u-hidden-visually'>Document</label>
+          <input type='file' name='document' class='c-subscribe-form__input' id='subscribe-email-signin' placeholder='Your Password' required data-members-email>
         </div>
         
 
@@ -29,11 +29,11 @@
         <div class='c-alert c-alert--invalid'>Please enter a valid email address!</div>
         <div class='c-alert c-alert--error'>An error occurred, please try again later.</div>
       </form>
-      <p class='u-type-xs u-mt-16'>Don&#x27;t have an account yet? <a href='{% url "register" %}' class='u-link'>Subscribe</a></p>
+      <p class='u-type-xs u-mt-16'>Don&#x27;t have an account yet? <a href='../subscribe/index.html' class='u-link'>Subscribe</a></p>
     </div>
 </div>
       </div>
     </main>
 
-    
-{% endblock content %}
+
+{% endblock %}

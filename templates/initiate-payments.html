@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}Make Payment{% endblock %}
+{% block content %}
+
+
+<form class="bg-white px-lg-5 py-3" id="paymentForm" action="{% url 'initiate-payment' %}" method="POST">
+          {% csrf_token %}
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <h2 class="text-center font-weight-bold">Make Payment </h2>
+                  <div class="row mt-3">
+                    <div class="col">
+                      <label for="email_address">Email Address</label>
+                      <input class="form-control" type="email" id="email-address" name="email" required="" />
+                    </div>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col">
+                      <label for="password">Amount</label>
+                      <input class="form-control" type="tel" id="amount" name="amount" required="" />
+                    </div>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col form-submit">
+                      <button type="submit" class="btn btn-auth w-100">Pay</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Pay now{% endblock %}
+{% block content %}
+Payment for {{ payment.amount }} with ref {{ payment.ref }} initiated by {{ payment.email }}
+
+  <div class="form-submit">
+    <button onclick="payWithPaystack()"> Pay </button>
+  </div>
+
+<script src="https://js.paystack.co/v1/inline.js"></script> 
+<script>
+  function payWithPaystack(){
+    let currency = "NGN";
+    let plan = "";
+    let ref = "{{ payment.ref }}";
+    let amount = "{{ payment.amount }}";
+    let obj = {
+      key: "{{ paystack_pub_key }}",
+      email: "{{ payment.email }}",
+      amount: "{{ amount_value }}",
+      ref : ref,
+      callback: function(response){
+      
+          window.location.href = "{% url 'verify-payment' payment.ref %}";
+      }
+    }
+    if (Boolean(currency)){
+      obj.currency = currency.toUpperCase()
+    }
+    if (Boolean(plan)){
+      obj.plan - plan
+    }
+
+    var handler = PaystackPop.setup(obj);
+    handler.openIframe();
+  }
+
+</script>
+{% endblock %}

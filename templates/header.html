@@ -101,6 +101,15 @@
 
 								<ul class="c-nav c-nav--right o-plain-list">
 									
+									{% if request.user.is_authenticated %}
+									<li class="c-nav__item">
+										<a
+											href="{% url 'create' %}"
+											class="c-btn c-btn--small c-btn--action"
+											>Create Post</a
+										>
+									</li>
+									{% else %}
 									<li class="c-nav__item">
 										<a
 											href="{% url 'login' %}"
@@ -115,6 +124,7 @@
 											>Register</a
 										>
 									</li>
+									{% endif %}
 								</ul>
 							</div>
 
