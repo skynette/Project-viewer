@@ -19,26 +19,3 @@
 							}
 						});
 				});
-
-        {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "publisher": {
-        "@type": "Organization",
-        "name": "Krabi",
-        "url": "https://krabi.aspirethemes.com/",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://krabi.aspirethemes.com/favicon.ico",
-            "width": 48,
-            "height": 48
-        }
-    },
-    "url" "https://krabi.aspirethemes.com/",
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://krabi.aspirethemes.com/"
-    },
-    "description": "Create a subscription Ghost blog with a beautiful and minimalist design."
-}
-    

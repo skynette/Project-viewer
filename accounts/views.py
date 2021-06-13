@@ -1,3 +1,4 @@
+from core.models import Payment
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -5,7 +6,14 @@ from accounts.models import Profile
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from core.views import check_paid
+import random
+import string
 
+
+def get_random_ref():
+	numbers = string.digits
+	ans = "".join(random.choice(numbers) for i in range(6))
+	return ans
 
 def register(request):
 	if request.method == "POST" and request.FILES['pic']:
@@ -19,7 +27,7 @@ def register(request):
 			password = request.POST['password1']
 			password2 = request.POST['password2']
 			pic = request.FILES['pic']
-
+		ref = get_random_ref()
 		if User.objects.filter(username=username).exists():
 			messages.error(request, 'Email already taken')
 			print("EMAIL TAKEN ERROR")
@@ -30,6 +38,12 @@ def register(request):
 			return redirect('register')
 		else:
 			user = User.objects.create_user(username=username, password=password, email=username, first_name=first_name, last_name=last_name)
+			if 'paid' in facebook:
+				p = Payment.objects.create(verified=True, amount=0, ref=ref, email=username, user=user)
+				p.save()
+				print()
+				print("NEW REGISTERED USER PAID")
+				print()
 			user.save()
 			profile = Profile.objects.create(
 				user=user, picture=pic, about=about, twitter=twitter, facebook=facebook)

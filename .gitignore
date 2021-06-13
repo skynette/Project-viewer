@@ -10,3 +10,5 @@ posts/__pycache__/
 posts/migrations/
 
 db.sqlite3
+
+media/

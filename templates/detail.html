@@ -21,7 +21,7 @@
           <div class="c-post-header__meta">
             <a href="" class="c-post-header__author">
               <div class="c-post-header__author_media">
-                <img class="c-post-header__author_image lazyload" data-src="" alt="{{ post.user.username }}" width="32"
+                <img class="c-post-header__author_image lazyload" data-src="{{ post.user.profile.picture.url }}" alt="{{ post.user.username }}" width="32"
                   height="32" />
               </div>
               <div class="c-post-header__author_info">
@@ -74,7 +74,7 @@
           <div class="c-card-author__media">
             <a href="">
               <img class="c-card-author__image lazyload"
-                data-src=""
+                data-src="{{ post.user.profile.picture.url }}"
                 alt="{{ post.user.username }}" width="80" height="80" />
             </a>
           </div>
@@ -82,7 +82,7 @@
           <div class="c-card-author__content">
             <h3 class="c-card-author__name">
               <a href="../author/top/index.html">{{ post.user.username }}</a>
-              <a href="https://twitter.com/aspirethemes" aria-label="Twitter" target="_blank" rel="noopener">
+              <a href="https://twitter.com/{{ post.user.profile.twitter }}" aria-label="Twitter" target="_blank" rel="noopener">
                 <div class="icon icon--ei-sc-twitter icon--s">
                   <svg class="icon__cnt">
                     <use xlink:href="#ei-sc-twitter-icon">
@@ -132,8 +132,9 @@
               <time class="c-teaser__date" datetime="" title="">{{ post.date }}</time>
             </div>
             <div class="c-teaser__media">
-              <img class="c-teaser__image lazyload" alt="{{ post.ImgUrl }}"
-                data-src="{{ post.ImgUrl }}" width="88"
+              <img class="c-teaser__image lazyload" alt=""
+                data-src="{{ post.ImgUrl }}"
+                width="88"
                 height="72" />
             </div>
           </a>

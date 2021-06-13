@@ -17,14 +17,14 @@
 						"
 					>
 					{% for post in posts %}
-          	<div class="js-grid">
+          				<div class="js-grid">
 							<div class="c-post-card js-post-card post tag-design">
 								<div class="c-post-card__media">
 									<div class="c-post-card__image-wrap">
 										<img
 											alt="Tech Companies Scaling Design"
 											class="c-post-card__image lazyload"
-                      src = "{{ post.ImgUrl }}"
+                      						src = "{{ post.ImgUrl }}"
 
 										/>
 									</div>
@@ -52,11 +52,11 @@
 									</p>
 
 									<div class="c-post-card__meta">
-										<a href="link to author here" class="c-post-card__author">
+										<a href="" class="c-post-card__author">
 											<div class="c-post-card__author_media">
 												<img
 													class="c-post-card__author_image lazyload"
-													data-src="author img src"
+													data-src="{{ post.user.profile.picture.url }}"
 													alt=""
 													width="32"
 													height="32"
@@ -110,6 +110,22 @@
           <div class="c-title-bar">
             <h3 class="c-title-bar__title">Recent Posts</h3>
           </div>
+		{% comment %} <form data-members-form='signin' class='c-subscribe-form c-subscribe-form--compact' method="POST" action='{% url "create" %}' enctype="multipart/form-data">
+			{% csrf_token %}
+			<div class='form-group'>
+				<input type="text" id="search-form-input" aria-label="Search Project Work" class="c-search__input js-search-input" placeholder="Type to Search" name="search"/>	
+			</div>							
+			<button type="submit" class="c-btn c-btn--small c-btn--action">Search</button>
+		</form> {% endcomment %}
+		<form class='c-subscribe-form c-subscribe-form--compact' method="POST" action='{% url "search" %}'>
+      	{% csrf_token %}
+        <div class='form-group'>
+          <label for='subscribe-email-signin' class='u-hidden-visually'>Project title</label>
+          <input type="text" id="form-input" aria-label="Search Project Work" class="input" placeholder="Type to Search" name="search" required>
+        </div>
+        <button type="submit" class="c-btn c-btn--small c-btn--action">Search</button>	
+      </form>
+	  <br>
 
           {% for post in fposts %}
           <a href="{% url 'detail' post.slug %}" class="c-teaser">

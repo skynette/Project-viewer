@@ -6,7 +6,7 @@ from django.db.models import Count, Q
 from core.views import check_paid
 
 
-@login_required(login_url='/login/')
+@login_required(login_url='/accounts/login/')
 def index(request):
 	if not check_paid(request.user):
 		return redirect('initiate-payment')
@@ -19,12 +19,13 @@ def index(request):
 	return render(request, 'index.html', context)
 
 
-@login_required(login_url='/login/')
+@login_required(login_url='/accounts/login/')
 def detail(request, slug):
 	if not check_paid(request.user):
 		return redirect('initiate-payment')
 	post = Post.objects.get(slug=slug)
 	fposts = Post.objects.all().order_by('-date')[:3]
+	print(post.user.profile.picture)
 	context = {
 		'post':post,
 		'fposts':fposts,
@@ -32,7 +33,7 @@ def detail(request, slug):
 	return render(request, 'detail.html', context)
 
 
-@login_required(login_url='/login/')
+@login_required(login_url='/accounts/login/')
 def create_post(request):
 	if not check_paid(request.user):
 		return redirect('initiate-payment')
@@ -48,22 +49,33 @@ def create_post(request):
 	return render(request, 'create_post.html')
 
 
-@login_required(login_url='/accounts/login/')
-def update_post(request, slug):
-	Post = Post.objects.get(slug=slug)
-	print('url = ', Post.get_absolute_url())
-	form = CreatePost(request.POST or None,
-	                     request.FILES or None, instance=Post,)
-	if request.method == "POST":
-		form = CreatePost(request.POST or None, instance=Post)
-		if form.is_valid():
-			form.save()
-			return redirect(Post.get_absolute_url())
-	return render(request, 'Posts/create_Post.html', {'form': form})
+# @login_required(login_url='/accounts/login/')
+# def update_post(request, slug):
+# 	Post = Post.objects.get(slug=slug)
+# 	print('url = ', Post.get_absolute_url())
+# 	form = CreatePost(request.POST or None,
+# 	                     request.FILES or None, instance=Post,)
+# 	if request.method == "POST":
+# 		form = CreatePost(request.POST or None, instance=Post)
+# 		if form.is_valid():
+# 			form.save()
+# 			return redirect(Post.get_absolute_url())
+# 	return render(request, 'Posts/create_Post.html', {'form': form})
 
 
+# @login_required(login_url='/accounts/login/')
+# def delete_post(request, slug):
+# 	Post = Post.objects.get(slug=slug)
+# 	Post.delete()
+# 	return redirect('/')
+
 @login_required(login_url='/accounts/login/')
-def delete_post(request, slug):
-	Post = Post.objects.get(slug=slug)
-	Post.delete()
-	return redirect('/')
+def search(request):
+	posts = Post.objects.all().order_by('-date')
+	if 'search' in request.POST:
+		word = request.POST['search']
+		posts = Post.objects.filter(Q(title__icontains=word)).distinct()
+	context = {
+		'posts':posts,
+	}
+	return render(request, 'index.html',context)
