@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <main class='o-wrapper'>
+      <div class='o-grid'>
+        
+<div class='o-grid__col o-grid__col--center o-grid__col--3-4-m o-grid__col--2-3-l'>
+    <div class='c-archive'>
+      <h1 class='c-archive__title'>New User!</h1>
+      <p class='c-archive__description'>Register to create an account with us.</p>
+    </div>
+
+    <div class='u-bg-white u-border u-border-radius u-p-32'>
+      <form data-members-form='signin' class='c-subscribe-form c-subscribe-form--compact' method="POST" action="{% url 'register' %}" enctype="multipart/form-data">
+      {% csrf_token %}
+        <div class='form-group'>
+          <label for='subscribe-email-signin' class='u-hidden-visually'>Your email address</label>
+          <input type='text' name='first_name' class='c-subscribe-form__input' id='subscribe-email-signin' placeholder='Your First name' required data-members-email>
+        </div>
+        <br>
+        <div class='form-group'>
+          <label for='subscribe-email-signin' class='u-hidden-visually'>Your email address</label>
+          <input type='text' name='last_name' class='c-subscribe-form__input' id='subscribe-email-signin' placeholder='Your Last name' required data-members-email>
+        </div>
+        <br>
+        <div class='form-group'>
+          <label for='subscribe-email-signin' class='u-hidden-visually'>Your email address</label>
+          <input type='email' name='email' class='c-subscribe-form__input' id='subscribe-email-signin' placeholder='Your email address' required data-members-email>
+        </div>
+        <br>
+        <div class='form-group'>
+          <label for='subscribe-email-signin' class='u-hidden-visually'>Your email address</label>
+          <input type='text' name='about' class='c-subscribe-form__input' id='subscribe-email-signin' placeholder='About yourself' required data-members-email>
+        </div>
+        <br>
+        <div class='form-group'>
+          <label for='subscribe-email-signin' class='u-hidden-visually'>Your email address</label>
+          <input type='text' name='twitter' class='c-subscribe-form__input' id='subscribe-email-signin' placeholder='Your twitter handle' required data-members-email>
+        </div>
+        <br>
+        <div class='form-group'>
+          <label for='subscribe-email-signin' class='u-hidden-visually'>Your email address</label>
+          <input type='text' name='facebook' class='c-subscribe-form__input' id='subscribe-email-signin' placeholder='Your facebook profile link' required data-members-email>
+        </div>
+        <br>
+        <div class='form-group'>
+          <label for='subscribe-email-signin' class='u-hidden-visually'>Your Picture</label>
+          <input type='file' name='pic' class='c-subscribe-form__input' id='subscribe-email-signin' placeholder='Your Picture' required data-members-email>
+        </div>
+        <br>
+        <div class='form-group'>
+          <label for='subscribe-email-signin' class='u-hidden-visually'>Your Password</label>
+          <input type='password' name='password1' class='c-subscribe-form__input' id='subscribe-email-signin' placeholder='Your Password' required data-members-email>
+        </div>
+		    <div class='form-group'>
+          <label for='subscribe-email-signin' class='u-hidden-visually'>Confirm Password</label>
+          <input type='password' name='password2' class='c-subscribe-form__input' id='subscribe-email-signin' placeholder='Confirm Password' required data-members-email>
+        </div>
+        <div class='form-group'>
+          <button class="c-btn c-btn--small c-btn--action">Sign up</button>
+        </div>
+        
+
+        <div class='c-alert c-alert--success'>Please check your inbox and click the link to complete the login.</div>
+        <div class='c-alert c-alert--invalid'>Please enter a valid email address!</div>
+        <div class='c-alert c-alert--error'>An error occurred, please try again later.</div>
+      </form>
+      <p class='u-type-xs u-mt-16'>Have an account ? <a href='{% url "login" %}' class='u-link'>Login</a></p>
+    </div>
+</div>
+      </div>
+    </main>
+
+    
+{% endblock content %}

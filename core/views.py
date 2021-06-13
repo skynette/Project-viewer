@@ -4,9 +4,20 @@ from django.conf import settings
 from django.contrib import messages
 
 
+def check_paid(user):
+	'''check paid'''
+	payments = Payment.objects.filter(user=user)
+	if payments.exists():
+		for pay in payments:
+			if pay.verified:
+				return True
+	return False
+
 def initiate_payment(request):
 	# if not request.user.is_authenticated:
 	# 	return redirect('/')
+	if check_paid(request.user):
+		return redirect('/')
 	if request.method == "POST":
 		print(request.POST)
 		amount = request.POST['amount']

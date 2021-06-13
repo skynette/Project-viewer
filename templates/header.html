@@ -101,12 +101,19 @@
 
 								<ul class="c-nav c-nav--right o-plain-list">
 									
-									{% if request.user.is_authenticated %}
+									{% if request.user.is_authenticated and request.user.is_active %}
 									<li class="c-nav__item">
 										<a
 											href="{% url 'create' %}"
 											class="c-btn c-btn--small c-btn--action"
 											>Create Post</a
+										>
+									</li>
+									<li class="c-nav__item">
+										<a
+											href="{% url 'logout' %}"
+											class="c-btn c-btn--small c-btn--action"
+											>Logout</a
 										>
 									</li>
 									{% else %}

@@ -13,7 +13,8 @@
     </div>
 
     <div class='u-bg-white u-border u-border-radius u-p-32'>
-      <form data-members-form='signin' class='c-subscribe-form c-subscribe-form--compact'>
+      <form data-members-form='signin' class='c-subscribe-form c-subscribe-form--compact' method="POST" action="{% url 'login' %}">
+      {% csrf_token %}
         <div class='form-group'>
           <label for='subscribe-email-signin' class='u-hidden-visually'>Your email address</label>
           <input type='email' name='email' class='c-subscribe-form__input' id='subscribe-email-signin' placeholder='Your email address' required data-members-email>
@@ -32,7 +33,7 @@
         <div class='c-alert c-alert--invalid'>Please enter a valid email address!</div>
         <div class='c-alert c-alert--error'>An error occurred, please try again later.</div>
       </form>
-      <p class='u-type-xs u-mt-16'>Don&#x27;t have an account yet? <a href='{% url "register" %}' class='u-link'>Subscribe</a></p>
+      <p class='u-type-xs u-mt-16'>Don&#x27;t have an account yet? <a href='{% url "register" %}' class='u-link'>Register</a></p>
     </div>
 </div>
       </div>

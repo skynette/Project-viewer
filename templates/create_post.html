@@ -21,10 +21,25 @@
         </div>
         <br>
         <div class='form-group'>
-          <label for='subscribe-email-signin' class='u-hidden-visually'>Document</label>
+          <label for='subscribe-email-signin' class=''>Image:</label>
+          <input type='file' name='image' class='c-subscribe-form__input' id='subscribe-email-signin' placeholder='Your Project Title' required data-members-email>
+        </div>
+        <br>
+        <div class='form-group'>
+          <label for='subscribe-email-signin' class='u-hidden-visually'>Snippet</label>
+          <input type='text' name='snippet' class='c-subscribe-form__input' id='subscribe-email-signin' placeholder='Your Project Title' required data-members-email>
+        </div>
+        <br>
+        <div class='form-group'>
+          <label for='subscribe-email-signin' class='u-hidden-visually'>Content</label>
+          <textarea type='text' name='content' class='c-subscribe-form__input' id='subscribe-email-signin' placeholder='Your Project Title' required data-members-email></textarea>
+        </div>
+        <br>
+        <div class='form-group'>
+          <label for='subscribe-email-signin' class=''>Project Document:</label>
           <input type='file' name='document' class='c-subscribe-form__input' id='subscribe-email-signin' placeholder='Your Password' required data-members-email>
         </div>
-        <button type="submit" class="btn btn-auth w-100">Post</button>
+        <button type="submit" class="c-btn c-btn--small c-btn--action">Post</button>
 
         <div class='c-alert c-alert--success'>Please check your inbox and click the link to complete the login.</div>
         <div class='c-alert c-alert--invalid'>Please enter a valid email address!</div>

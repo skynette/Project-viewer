@@ -103,88 +103,32 @@
 						"
 					>
 						<div class="c-sidebar">
-							<div class="c-widget">
-								<div class="c-title-bar">
-									<h3 class="c-title-bar__title">Featured Posts</h3>
-								</div>
 
-								<a
-									href="everybody-listen-we-have-to-put-a-barrier-between-us-and-the-world/index.html"
-									class="c-teaser"
-								>
-									<div class="c-teaser__content">
-										<h3 class="c-teaser__title">
-											Put a barrier between us and the world!
-										</h3>
-										<time
-											class="c-teaser__date"
-											datetime="2017-03-27"
-											title="27 March 2017"
-											>27 Mar 2017</time
-										>
-									</div>
-									<div class="c-teaser__media">
-										<img
-											class="c-teaser__image lazyload"
-											alt="Put a barrier between us and the world!"
-											data-src="/content/images/size/w160/2019/12/martin-widenka-61HdqMxX2lc-unsplash.jpg"
-											width="88"
-											height="72"
-										/>
-									</div>
-								</a>
-								<a
-									href="you-got-to-cool-that-shit-off-and-thats-the-double-truth-ruth/index.html"
-									class="c-teaser"
-								>
-									<div class="c-teaser__content">
-										<h3 class="c-teaser__title">
-											And that&#x27;s the double-truth, Ruth
-										</h3>
-										<time
-											class="c-teaser__date"
-											datetime="2015-12-22"
-											title="22 December 2015"
-											>22 Dec 2015</time
-										>
-									</div>
-									<div class="c-teaser__media">
-										<img
-											class="c-teaser__image lazyload"
-											alt="And that&#x27;s the double-truth, Ruth"
-											data-src="/content/images/size/w160/2019/10/heather-ford-5gkYsrH_ebY-unsplash.jpg"
-											width="88"
-											height="72"
-										/>
-									</div>
-								</a>
-								<a
-									href="eddie-kim-somehow-managed-to-fill-the-plane-with-poisonous-snakes/index.html"
-									class="c-teaser"
-								>
-									<div class="c-teaser__content">
-										<h3 class="c-teaser__title">
-											Eddie Kim somehow managed to fill the snakes.
-										</h3>
-										<time
-											class="c-teaser__date"
-											datetime="2015-12-21"
-											title="21 December 2015"
-											>21 Dec 2015</time
-										>
-									</div>
-									<div class="c-teaser__media">
-										<img
-											class="c-teaser__image lazyload"
-											alt="Eddie Kim somehow managed to fill the snakes."
-											data-src="/content/images/size/w160/2019/10/angela-bailey-jlo7Bf4tUoY-unsplash-2.jpg"
-											width="88"
-											height="72"
-										/>
-									</div>
-								</a>
-							</div> 
-						</div>
+
+        
+        <div class="c-widget">
+          <div class="c-title-bar">
+            <h3 class="c-title-bar__title">Recent Posts</h3>
+          </div>
+
+          {% for post in fposts %}
+          <a href="{% url 'detail' post.slug %}" class="c-teaser">
+            <div class="c-teaser__content">
+              <h3 class="c-teaser__title">
+                {{ post.title }}
+              </h3>
+              <time class="c-teaser__date" datetime="" title="">{{ post.date }}</time>
+            </div>
+            <div class="c-teaser__media">
+              <img class="c-teaser__image lazyload" alt="{{ post.ImgUrl }}"
+                data-src="{{ post.ImgUrl }}" width="88"
+                height="72" />
+            </div>
+          </a>
+          {% endfor %}
+          
+        </div>
+      </div>
 
 					</div>
 				</div>
