@@ -15,10 +15,10 @@
 
 <div class='o-grid__col o-grid__col--center o-grid__col--3-4-m o-grid__col--2-3-l  o-grid__col--4-4-l '>
   <div class='c-member-plans'>
-    <div class='c-member-plan c-member-plan--free'>
+    {% comment %} <div class='c-member-plan c-member-plan--free'>
       <header class='c-member-plan__header'>
         <h2 class='c-member-plan__title'>Weekly</h2>
-        <span class='c-member-plan__sign'>$</span>
+        <span class='c-member-plan__sign'>NGN</span>
         <strong class='c-member-plan__amount'>10</strong>
       </header>
       <div class='c-member-plan__content'>
@@ -33,13 +33,13 @@
         </form>
         
       </div>
-    </div>
+    </div> {% endcomment %}
 
   <div class='c-member-plan c-member-plan--premium'>
     <header class='c-member-plan__header'>
       <h2 class='c-member-plan__title'>Monthly</h2>
-      <span class='c-member-plan__sign'>$</span>
-      <strong class='c-member-plan__amount'>35</strong>
+      <span class='c-member-plan__sign'>NGN</span>
+      <strong class='c-member-plan__amount'>1000</strong>
     </header>
     <div class='c-member-plan__content'>
       <ul class='c-member-plan__list'>
@@ -50,13 +50,13 @@
       </ul>
       <form method="POST" action="{% url 'initiate-payment' %}" id='form' style="text-align: center;">
         {% csrf_token %}
-        <input type='hidden' name='amount' class='c-subscribe-form__input' id='subscribe-email-signin' placeholder='Your email address' required value="35">
+        <input type='hidden' name='amount' class='c-subscribe-form__input' id='subscribe-email-signin' placeholder='Your email address' required value="1000">
         <button type="submit" class='c-btn c-btn--dark'>Choose this plan</button>
         </form>
     </div>
   </div>
 
-  <div class='c-member-plan c-member-plan--premium'>
+  {% comment %} <div class='c-member-plan c-member-plan--premium'>
     <header class='c-member-plan__header'>
       <h2 class='c-member-plan__title'>Yearly</h2>
       <span class='c-member-plan__sign'>$</span>
@@ -76,7 +76,7 @@
         <button type="submit" class='c-btn c-btn--dark'>Choose this plan</button>
         </form>
     </div>
-  </div>
+  </div> {% endcomment %}
 </div></div>
       </div>
     </main>

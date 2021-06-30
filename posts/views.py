@@ -8,8 +8,6 @@ from core.views import check_paid
 
 @login_required(login_url='/accounts/login/')
 def index(request):
-	if not check_paid(request.user):
-		return redirect('initiate-payment')
 	posts = Post.objects.all().order_by('-date')
 	fposts = Post.objects.all().order_by('-date')[:5]
 	context = {
