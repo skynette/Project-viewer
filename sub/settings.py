@@ -152,5 +152,5 @@ EMAIL_USE_TLS = True
 # from django.contrib.contenttypes.models import ContentType
 # ContentType.objects.all().delete()
 
-PAYSTACK_SECRET_KEY = "sk_test_f6b61226abac38853fb07dc84cca3d968f03cbda"
-PAYSTACK_PUBLIC_KEY = "pk_test_b5bbac18595837d0f90896509f8e389f5c79b74e"
+PAYSTACK_SECRET_KEY = ""
+PAYSTACK_PUBLIC_KEY = ""
